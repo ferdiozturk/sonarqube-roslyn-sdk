@@ -653,12 +653,12 @@ namespace SonarQube.Plugins.Roslyn.RoslynPluginGeneratorTests
 
         private static IPackage CreatePackageWithAnalyzer(RemoteRepoBuilder remoteRepoBuilder, string packageId, string packageVersion, License acceptanceRequired, params IPackage[] dependencies)
         {
-            return remoteRepoBuilder.CreatePackage(packageId, packageVersion, typeof(RoslynAnalyzer11.CSharpAnalyzer).Assembly.Location, acceptanceRequired, dependencies);
+            return remoteRepoBuilder.CreatePackage(packageId, packageVersion, typeof(RoslynAnalyzer34.CSharpAnalyzer).Assembly.Location, acceptanceRequired, dependencies);
         }
 
         private void CreatePackageInFakeRemoteRepo(RemoteRepoBuilder remoteRepoBuilder, string packageId, string packageVersion)
         {
-            remoteRepoBuilder.CreatePackage(packageId, packageVersion, typeof(RoslynAnalyzer11.AbstractAnalyzer).Assembly.Location, License.NotRequired /* no dependencies */ );
+            remoteRepoBuilder.CreatePackage(packageId, packageVersion, typeof(RoslynAnalyzer34.AbstractAnalyzer).Assembly.Location, License.NotRequired /* no dependencies */ );
         }
 
         /// <summary>

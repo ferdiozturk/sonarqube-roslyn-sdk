@@ -47,7 +47,7 @@ namespace SonarQube.Plugins.IntegrationTests
             string outputDir = TestUtils.CreateTestDirectory(TestContext, ".out");
 
             // Create a valid analyzer package
-            RoslynAnalyzer11.CSharpAnalyzer analyzer = new RoslynAnalyzer11.CSharpAnalyzer();
+            RoslynAnalyzer34.CSharpAnalyzer analyzer = new RoslynAnalyzer34.CSharpAnalyzer();
 
             string packageId = "Analyzer1.Pkgid1"; // package id is not all lowercase
             string fakeRemoteNuGetDir = TestUtils.CreateTestDirectory(TestContext, ".fakeRemoteNuGet");
@@ -80,13 +80,14 @@ namespace SonarQube.Plugins.IntegrationTests
             string dummyContentFile = TestUtils.CreateTextFile("dummy.txt", outputDir, "non-analyzer content file");
 
             // Create a valid analyzer package
-            RoslynAnalyzer11.CSharpAnalyzer analyzer = new RoslynAnalyzer11.CSharpAnalyzer();
+            RoslynAnalyzer34.CSharpAnalyzer analyzer = new RoslynAnalyzer34.CSharpAnalyzer();
 
             string fakeRemoteNuGetDir = TestUtils.CreateTestDirectory(TestContext, ".fakeRemoteNuGet");
             IPackageManager fakeRemotePkgMgr = CreatePackageManager(fakeRemoteNuGetDir);
-            IPackage child1 = AddPackage(fakeRemotePkgMgr, "Analyzer.Child1", "1.1.0", analyzer.GetType().Assembly.Location);
-            IPackage child2 = AddPackage(fakeRemotePkgMgr, "Analyzer.Child2", "1.2.0", analyzer.GetType().Assembly.Location);
-            IPackage targetPkg = AddPackage(fakeRemotePkgMgr, "Empty.Parent", "1.0.0", dummyContentFile, child1, child2);
+            //IPackage child1 = AddPackage(fakeRemotePkgMgr, "Analyzer.Child1", "1.1.0", analyzer.GetType().Assembly.Location);
+            //IPackage child2 = AddPackage(fakeRemotePkgMgr, "Analyzer.Child2", "1.2.0", analyzer.GetType().Assembly.Location);
+            IPackage childV34 = AddPackage(fakeRemotePkgMgr, "Analyzer.Child34", "3.4.0", analyzer.GetType().Assembly.Location);
+            IPackage targetPkg = AddPackage(fakeRemotePkgMgr, "Empty.Parent", "1.0.0", dummyContentFile, /*child1, child2,*/ childV34);
 
             string localPackageDestination = TestUtils.CreateTestDirectory(TestContext, ".localpackages");
 
@@ -101,8 +102,10 @@ namespace SonarQube.Plugins.IntegrationTests
             result.Should().BeTrue();
 
             // Expecting one plugin per dependency with analyzers
-            CheckJarGeneratedForPackage(outputDir, analyzer, child1);
+            /*CheckJarGeneratedForPackage(outputDir, analyzer, child1);
             CheckJarGeneratedForPackage(outputDir, analyzer, child2);
+            */
+            CheckJarGeneratedForPackage(outputDir, analyzer, childV34);
             AssertJarsGenerated(outputDir, 2);
         }
 
@@ -114,7 +117,7 @@ namespace SonarQube.Plugins.IntegrationTests
             string outputDir = TestUtils.CreateTestDirectory(TestContext, ".out");
 
             // Create a valid analyzer package
-            RoslynAnalyzer11.CSharpAnalyzer analyzer = new RoslynAnalyzer11.CSharpAnalyzer();
+            RoslynAnalyzer34.CSharpAnalyzer analyzer = new RoslynAnalyzer34.CSharpAnalyzer();
 
             // Parent and children all have analyzers, expecting plugins for all three
             string fakeRemoteNuGetDir = TestUtils.CreateTestDirectory(TestContext, ".fakeRemoteNuGet");

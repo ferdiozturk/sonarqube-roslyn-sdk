@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AEB50389-D3DD-4EF3-9974-109BC5F20646}"
 EndProject
@@ -30,9 +30,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SonarQube.Plugins.Roslyn.Ro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "Tests\IntegrationTests\IntegrationTests.csproj", "{CC8197AA-D03C-42DB-A71C-5AEEEE0D9FDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoslynAnalyzer11", "Tests\ExampleAnalyzers\RoslynAnalyzer11\RoslynAnalyzer11\RoslynAnalyzer11.csproj", "{B43B3D94-F457-4BBA-A0D2-EF460F43B906}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoslynAnalyzer10", "Tests\ExampleAnalyzers\RoslynAnalyzer10\RoslynAnalyzer10\RoslynAnalyzer10.csproj", "{AAAFF8DB-1438-4066-BE44-353B09CF6518}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoslynAnalyzer34", "RoslynAnalyzer34\RoslynAnalyzer34.csproj", "{60B13DFE-E4E3-4051-9435-F7DFEA61DB90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,14 +70,10 @@ Global
 		{CC8197AA-D03C-42DB-A71C-5AEEEE0D9FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC8197AA-D03C-42DB-A71C-5AEEEE0D9FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC8197AA-D03C-42DB-A71C-5AEEEE0D9FDD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B43B3D94-F457-4BBA-A0D2-EF460F43B906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B43B3D94-F457-4BBA-A0D2-EF460F43B906}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B43B3D94-F457-4BBA-A0D2-EF460F43B906}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B43B3D94-F457-4BBA-A0D2-EF460F43B906}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AAAFF8DB-1438-4066-BE44-353B09CF6518}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AAAFF8DB-1438-4066-BE44-353B09CF6518}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AAAFF8DB-1438-4066-BE44-353B09CF6518}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AAAFF8DB-1438-4066-BE44-353B09CF6518}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60B13DFE-E4E3-4051-9435-F7DFEA61DB90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B13DFE-E4E3-4051-9435-F7DFEA61DB90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B13DFE-E4E3-4051-9435-F7DFEA61DB90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B13DFE-E4E3-4051-9435-F7DFEA61DB90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,7 +85,9 @@ Global
 		{F60478FF-1EEA-4FB4-9BF4-50D11F94FA57} = {AEB50389-D3DD-4EF3-9974-109BC5F20646}
 		{AAE84E64-5977-44D7-8959-80F59FA2B0C1} = {AEB50389-D3DD-4EF3-9974-109BC5F20646}
 		{CC8197AA-D03C-42DB-A71C-5AEEEE0D9FDD} = {AEB50389-D3DD-4EF3-9974-109BC5F20646}
-		{B43B3D94-F457-4BBA-A0D2-EF460F43B906} = {A0234F11-305B-4409-AEA9-1982C397C395}
-		{AAAFF8DB-1438-4066-BE44-353B09CF6518} = {A0234F11-305B-4409-AEA9-1982C397C395}
+		{60B13DFE-E4E3-4051-9435-F7DFEA61DB90} = {A0234F11-305B-4409-AEA9-1982C397C395}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0022731-20A0-4424-B348-14398D9513ED}
 	EndGlobalSection
 EndGlobal

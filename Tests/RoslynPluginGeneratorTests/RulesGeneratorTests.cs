@@ -22,7 +22,7 @@ using System;
 using System.Linq;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using RoslynAnalyzer11;
+using RoslynAnalyzer34;
 using SonarQube.Plugins.Test.Common;
 
 namespace SonarQube.Plugins.Roslyn.RuleGeneratorTests
